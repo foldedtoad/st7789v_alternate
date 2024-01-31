@@ -1,0 +1,5 @@
+# Copyright (c) 2024  Callender-Consulting LLC 
+# SPDX-License-Identifier: Apache-2.0
+
+config SHIELD_ST7789V_ALTERNATE
+	def_bool $(shields_list_contains,st7789v_alternate)

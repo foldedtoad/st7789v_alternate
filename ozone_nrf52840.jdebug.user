@@ -1,0 +1,37 @@
+
+
+Breakpoint=/home/robin/zephyr/zephyrproject/zephyr/drivers/display/display_st7789v.c:347, State=BP_STATE_DISABLED
+Breakpoint=/home/robin/zephyr/zephyrproject/zephyr/drivers/display/display_st7789v.c:381, State=BP_STATE_DISABLED
+Breakpoint=/home/robin/zephyr/zephyrproject/zephyr/drivers/display/display_st7789v.c:383, State=BP_STATE_DISABLED
+Breakpoint=/home/robin/zephyr/zephyrproject/modules/hal/nordic/nrfx/drivers/src/nrfx_spim.c:443, State=BP_STATE_DISABLED
+Breakpoint=/home/robin/zephyr/zephyrproject/modules/hal/nordic/nrfx/drivers/src/nrfx_spim.c:516, State=BP_STATE_DISABLED
+Breakpoint=/home/robin/zephyr/zephyrproject/modules/hal/nordic/nrfx/drivers/src/nrfx_spim.c:556, State=BP_STATE_DISABLED
+Breakpoint=/home/robin/zephyr/zephyrproject/zephyr/arch/arm/core/cortex_m/reset.S:97, State=BP_STATE_DISABLED
+Breakpoint=/home/robin/zephyr/zephyrproject/zephyr/drivers/spi/spi_nrfx_spim.c:121, State=BP_STATE_DISABLED
+Breakpoint=/home/robin/zephyr/zephyrproject/zephyr/drivers/spi/spi_nrfx_spim.c:192, State=BP_STATE_DISABLED
+OpenDocument="cpu_idle.S", FilePath="/home/robin/zephyr/zephyrproject/zephyr/arch/arm/core/cortex_m/cpu_idle.S", Line=130
+OpenDocument="lv_disp.c", FilePath="/home/robin/zephyr/zephyrproject/modules/lib/gui/lvgl/src/core/lv_disp.c", Line=88
+OpenDocument="log_msg.h", FilePath="/home/robin/zephyr/st7789_display/build/zephyr/include/generated/syscalls/log_msg.h", Line=29
+OpenDocument="lv_indev.c", FilePath="/home/robin/zephyr/zephyrproject/modules/lib/gui/lvgl/src/core/lv_indev.c", Line=499
+OpenDocument="spi_context.h", FilePath="/home/robin/zephyr/zephyrproject/zephyr/drivers/spi/spi_context.h", Line=307
+OpenDocument="main.c", FilePath="/home/robin/zephyr/st7789_display/src/main.c", Line=44
+OpenToolbar="Debug", Floating=0, x=0, y=0
+OpenWindow="Call Stack", DockArea=RIGHT, x=0, y=0, w=624, h=551, TabPos=2, TopOfStack=1, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=0, w=624, h=551, TabPos=3, TopOfStack=0, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Break & Tracepoints", DockArea=LEFT, x=0, y=0, w=361, h=551, TabPos=0, TopOfStack=1, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VectorCatchIndexMask=254
+OpenWindow="Global Data", DockArea=RIGHT, x=0, y=0, w=624, h=551, TabPos=0, TopOfStack=0, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Local Data", DockArea=RIGHT, x=0, y=0, w=624, h=551, TabPos=1, TopOfStack=0, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Functions", DockArea=LEFT, x=0, y=0, w=361, h=551, TabPos=1, TopOfStack=0, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Terminal", DockArea=BOTTOM, x=0, y=0, w=904, h=316, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Console", DockArea=BOTTOM, x=1, y=0, w=763, h=316, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
+TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Auto";"Name";"Value";"Description"], ColWidths=[100;100;105;319]
+TableHeader="Local Data", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Size";"Type"], ColWidths=[148;248;31;197]
+TableHeader="Global Data", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type"], ColWidths=[140;161;84;48;191]
+TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Source"], ColWidths=[195;75;48;57;100]
+TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
+TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
+TableHeader="Vector Catches", SortCol="", SortOrder="ASCENDING", VisibleCols=["";"Vector Catch";"Description"], ColWidths=[50;300;500]
+TableHeader="Break & Tracepoints", SortCol="", SortOrder="ASCENDING", VisibleCols=["";"Type";"Location";"Extras"], ColWidths=[100;74;171;100]
+TableHeader="Call Stack", SortCol="Function", SortOrder="ASCENDING", VisibleCols=["Function";"Stack Frame";"Source"], ColWidths=[144;100;380]
+TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[26;26;26;26]
