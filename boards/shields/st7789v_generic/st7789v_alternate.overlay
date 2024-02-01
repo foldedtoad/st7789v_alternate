@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2019 Jan Van Winkel <jan.van_winkel@dxplore.eu>
+ * Copyright (c) 2024 Callender-Consulting LLC
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -18,9 +19,9 @@
 		compatible = "sitronix,st7789v";
 		spi-max-frequency = <20000000>;
 		reg = <0>;
-		cmd-data-gpios = <&gpio1 11 0>;
-		reset-gpios    = <&gpio1 10 0>;
-		width = <320>;
+		cmd-data-gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
+		reset-gpios    = <&gpio1 10 GPIO_ACTIVE_LOW>;
+		width  = <320>;
 		height = <170>;
 		x-offset = <0>;
 		y-offset = <35>;
