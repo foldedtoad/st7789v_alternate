@@ -14,8 +14,8 @@ This was done in order to break away from the Zephyr LVGL example code configura
 Display shield and a board which provides a configuration
 for example:
 
-[**Display**](https://www.aliexpress.us/item/3256805850192151.html) 
-
+* [**ST7789**](https://www.aliexpress.us/item/3256805850192151.html) display device.
+* **PCA10056** Nordic nRF52840 Eval Board.
 
 ## How to Build
 This project was developed using Zephyr V3.5, and successfully built on both Ubuntu and MacOS.  
