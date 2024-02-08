@@ -1,11 +1,9 @@
-.. zephyr:code-sample:: lvgl
-   :name: LVGL basic sample
-   :relevant-api: display_interface
 
-   Display "Hello World" and a dynamic counter using LVGL.
 
 Overview
 ********
+
+Display "Hello World" and a dynamic counter using LVGL.  
 
 This sample application displays "Hello World" in the center of the screen
 and a counter at the bottom which increments every second. If an input driver
@@ -13,55 +11,24 @@ is supported, such as the touch panel controller on mimxrt10{50,60,64}_evk
 boards, "Hello World" is enclosed in a button that changes to the toggled state
 when touched.
 
+The **alternate** aspect of this project is it doesn't use the arduino shield schema, but rather directly configures the display device.
+This was done in order to break away from the Zephyr LVGL example code configuration.
+
 Requirements
 ************
 
 Display shield and a board which provides a configuration
-for Arduino connectors, for example:
+for example:
 
-- :ref:`adafruit_2_8_tft_touch_v2` and :ref:`nrf52840dk_nrf52840`
-- :ref:`buydisplay_2_8_tft_touch_arduino` and :ref:`nrf52840dk_nrf52840`
-- :ref:`ssd1306_128_shield` and :ref:`frdm_k64f`
-
-or a board with an integrated display:
-
-- :ref:`esp_wrover_kit`
-
-or a simulated display environment in a native Posix application:
-
-- :ref:`native_posix`
-- `SDL2`_
-
-or
-
-- :ref:`mimxrt1050_evk`
-- `RK043FN02H-CT`_
-
-or
-
-- :ref:`mimxrt1060_evk`
-- `RK043FN02H-CT`_
+[**Display**] (https://www.aliexpress.us/item/3256805850192151.html) 
 
 Building and Running
 ********************
 
-Example building for :ref:`nrf52840dk_nrf52840`:
+Example building for `nrf52840dk_nrf52840`:
 
-.. zephyr-app-commands::
-   :zephyr-app: samples/subsys/display/lvgl
-   :board: nrf52840dk_nrf52840
-   :shield: adafruit_2_8_tft_touch_v2
-   :goals: build flash
 
-Example building for :ref:`native_posix`:
 
-.. zephyr-app-commands::
-   :zephyr-app: samples/subsys/display/lvgl
-   :board: native_posix
-   :goals: build run
-
-Alternatively, if building from a 64-bit host machine, the previous target
-board argument may also be replaced by ``native_posix_64``.
 
 References
 **********
