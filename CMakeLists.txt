@@ -7,7 +7,7 @@ set(BOARD nrf52840dk_nrf52840)
 set(SHIELD st7789v_alternate)
 
 find_package(Zephyr)
-project(st7789)
+project(st7789v_alternate)
 
 FILE(GLOB app_sources src/*.c)
 
