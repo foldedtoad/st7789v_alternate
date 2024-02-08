@@ -9,6 +9,8 @@ and a counter at the bottom which increments every second.
 The **alternate** aspect of this project is it doesn't use the arduino shield schema, but rather directly configures the display device.
 This was done in order to break away from the Zephyr LVGL example code configuration.
 
+See [video](https://studio.youtube.com/video/sml6Ic_K4g4) for demostration.
+
 ## Requirements
 
 Display shield and a board which provides a configuration
