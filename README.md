@@ -19,9 +19,11 @@ for example:
 * [**ST7789**](https://www.aliexpress.us/item/3256805850192151.html) display panel.
 * **PCA10056** Nordic nRF52840 Eval Board.
 
-### Soldering
+### Wiring and Soldering
 The 0.10" headers will need to be soldered onto the display pannel. In addition, wiring between the display panel and the PCA10056 board needs to be made.  
 Review the **nrf52840dk_nrf52840.overlay** file for wire-to-pin specifics.
+
+Be sure to wire the backlight pin, othewise the panel will remain dark.
 
 ## How to Build
 This project was developed using Zephyr V3.5, and successfully built on both Ubuntu and MacOS.  
