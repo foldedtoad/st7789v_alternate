@@ -39,7 +39,7 @@
     backlight {
         compatible = "gpio-leds";
         backlight0: backlight_0 {
-            gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
+            gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>;
             label = "BACKLIGHT";
         };
     };
