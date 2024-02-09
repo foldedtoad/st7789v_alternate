@@ -35,6 +35,20 @@
     clock-frequency = <16000000>;
 };
 
+/ {
+    backlight {
+        compatible = "gpio-leds";
+        backlight0: backlight_0 {
+            gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
+            label = "BACKLIGHT";
+        };
+    };
+
+    aliases {
+        backlight = &backlight0;
+    };    
+};
+
 &gpio1 {
     status = "okay";
 };

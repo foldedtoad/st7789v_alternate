@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.20.0)
 
 set(BOARD_ROOT "${CMAKE_CURRENT_SOURCE_DIR}")
 set(BOARD nrf52840dk_nrf52840)
+#set(BOARD nrf52dk_nrf52832)
 set(SHIELD st7789v_alternate)
 
 find_package(Zephyr)

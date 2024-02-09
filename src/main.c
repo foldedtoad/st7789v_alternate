@@ -20,9 +20,18 @@ LOG_MODULE_REGISTER(app);
 
 static uint32_t count;
 
+static struct gpio_dt_spec backlight = 
+		GPIO_DT_SPEC_GET_OR(DT_ALIAS(backlight), gpios, {0});
+
+#define BACKLIGHT_GPIO_DEV  DT_NODELABEL(gpio1)
+#define BACKLIGHT_PIN       DT_GPIO_PIN(DT_ALIAS(backlight), gpios)
+#define BACKLIGHT_FLAGS     DT_GPIO_FLAGS(DT_ALIAS(backlight), gpios)	
+
+static const struct device * gpio1;
+
 #ifdef CONFIG_GPIO
-static struct gpio_dt_spec button_gpio = GPIO_DT_SPEC_GET_OR(
-		DT_ALIAS(sw0), gpios, {0});
+static struct gpio_dt_spec button_gpio = 
+		GPIO_DT_SPEC_GET_OR(DT_ALIAS(sw0), gpios, {0});
 static struct gpio_callback button_callback;
 
 static void button_isr_callback(const struct device *port,
@@ -49,6 +58,27 @@ static void lv_btn_click_callback(lv_event_t *e)
 	count = 0;
 }
 
+static int set_backlight_on(void)
+{
+	gpio1 = DEVICE_DT_GET(BACKLIGHT_GPIO_DEV);
+    if (!gpio1) {
+        LOG_ERR("\"%s\" not found.", DEVICE_DT_NAME(BACKLIGHT_GPIO_DEV));
+        return -1;
+    }
+
+    LOG_INF("Backlight: pin %d, flag %d", BACKLIGHT_PIN, BACKLIGHT_FLAGS);
+
+    int flags = (GPIO_OUTPUT | BACKLIGHT_FLAGS);
+
+    gpio_pin_configure(gpio1, BACKLIGHT_PIN, flags);
+
+	gpio_pin_set(gpio1, BACKLIGHT_PIN, 1);
+
+	LOG_INF("Backlight is ready");
+
+	return 0;
+}
+
 int main(void)
 {
 	char count_str[11] = {0};
@@ -60,7 +90,12 @@ int main(void)
 
 	display_dev = DEVICE_DT_GET(DT_CHOSEN(zephyr_display));
 	if (!device_is_ready(display_dev)) {
-		LOG_ERR("Device not ready, aborting test");
+		LOG_ERR("Device not ready, aborting");
+		return 0;
+	}
+
+	if (set_backlight_on() < 0) {
+		LOG_ERR("Backlight failure: aborting");
 		return 0;
 	}
 
