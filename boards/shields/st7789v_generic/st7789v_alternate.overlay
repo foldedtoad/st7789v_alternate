@@ -13,7 +13,6 @@
 
 &spi0 {
 	status = "okay";
-	cs-gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
 
 	st7789v_alternate: st7789v@0 {
 		compatible = "sitronix,st7789v";
