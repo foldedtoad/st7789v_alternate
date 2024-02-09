@@ -40,4 +40,4 @@ This build method use cmake directly, and doesn't use west or ninja.
 ### West Method
 1) cd to your st7789v_alternate root directory
 2) rm -rf build
-3) west build -b st7789v_alternate
+3) west build -b nrf52840dk_nrf52840
