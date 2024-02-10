@@ -1,0 +1,43 @@
+/*
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            pinmux = <SPI0_CSN_P1>, // pin 2, GP1
+                     <SPI0_SCK_P2>, // pin 4. GP2 
+                     <SPI0_TX_P3>;  // pin 5. GP3
+        };
+        group2 {
+            pinmux = <SPI0_RX_P0>;  // pin 1, GP0
+            input-enable;
+        };
+    };
+};
+
+&spi0 {
+    clock-frequency = <DT_FREQ_M(8)>;
+    status = "okay";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
+};
+
+/ {
+    backlight {
+        compatible = "gpio-leds";
+        backlight0: backlight_0 {
+            gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>; // pin9, GP6
+            label = "BACKLIGHT";
+        };
+    };
+
+    aliases {
+        backlight = &backlight0;
+    };    
+};
+
+&gpio0 {
+    status = "okay";
+};

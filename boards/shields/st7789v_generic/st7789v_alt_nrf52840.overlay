@@ -7,14 +7,14 @@
 
 / {
 	chosen {
-		zephyr,display = &st7789v_alternate;
+		zephyr,display = &st7789v_alt_nrf52840;
 	};
 };
 
 &spi0 {
 	status = "okay";
 
-	st7789v_alternate: st7789v@0 {
+	st7789v_alt_nrf52840: st7789v@0 {
 		compatible = "sitronix,st7789v";
 		spi-max-frequency = <20000000>;
 		reg = <0>;

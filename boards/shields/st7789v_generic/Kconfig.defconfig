@@ -1,21 +1,47 @@
 # Copyright (c) 2024  Callender-Consulting LLC
 # SPDX-License-Identifier: Apache-2.0
 
-if SHIELD_ST7789V_ALTERNATE
+#--------------------------------------------
+#  for nRF52840 boards
+#--------------------------------------------
+if SHIELD_ST7789V_ALT_NRF52840
 
 if DISPLAY
 
 choice ST7789V_PIXEL_FORMAT
-	default ST7789V_RGB888 if SHIELD_ST7789V_ALTERNATE
+	default ST7789V_RGB565 if SHIELD_ST7789V_ALT_NRF52840
 endchoice
 
 if LVGL
 
 config LV_Z_BITS_PER_PIXEL
-	default 24 if SHIELD_ST7789V_ALTERNATE
+	default 24 if SHIELD_ST7789V_ALT_NRF52840
 
 endif # LVGL
 
 endif # DISPLAY
 
-endif # SHIELD_ST7789V_ALTERNATE
+endif # SHIELD_ST7789V_ALT_NRF52840
+
+#--------------------------------------------
+#  for PICO_W boards
+#--------------------------------------------
+if SHIELD_ST7789V_ALT_PICO_W
+
+if DISPLAY
+
+choice ST7789V_PIXEL_FORMAT
+	default ST7789V_RGB565 if SHIELD_ST7789V_ALT_PICO_W
+endchoice
+
+if LVGL
+
+config LV_Z_BITS_PER_PIXEL
+	default 24 if SHIELD_ST7789V_ALT_PICO_W
+
+endif # LVGL
+
+endif # DISPLAY
+
+endif # SHIELD_ST7789V_ALT_PICO_W
+
