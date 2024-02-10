@@ -2,13 +2,15 @@
 
 cmake_minimum_required(VERSION 3.20.0)
 
-set(BOARD_ROOT "${CMAKE_CURRENT_SOURCE_DIR}")
-set(BOARD nrf52840dk_nrf52840)
-#set(BOARD nrf52dk_nrf52832)
-set(SHIELD st7789v_alternate)
+# Suppress "simple_bus_reg" on Pico boards as 
+# all GPIO ports use the same register.
+list(APPEND EXTRA_DTC_FLAGS "-Wno-simple_bus_reg")
+
+#set(BOARD nrf52840dk_nrf52840)
+set(BOARD rpi_pico_w)
 
 find_package(Zephyr)
-project(st7789v_alternate)
+project(st7789v_alt)
 
 FILE(GLOB app_sources src/*.c)
 

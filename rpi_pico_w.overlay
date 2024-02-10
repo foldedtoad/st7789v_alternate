@@ -4,42 +4,32 @@
  */
 
 &pinctrl {
-    spi0_default_alt: spi0_default_alt {
+    spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI,1,13)>,
-                    <NRF_PSEL(SPIM_SCK, 1,15)>;
+            pinmux = <SPI0_CSN_P1>, // pin 2, GP1
+                     <SPI0_SCK_P2>, // pin 4. GP2
+                     <SPI0_TX_P3>;  // pin 5. GP3
         };
         group2 {
-            psels = <NRF_PSEL(SPIM_MISO,1,14)>;
-            bias-pull-down;
-        };
-        
-    };
-    spi0_sleep_alt: spi0_sleep_alt {
-        group1 {
-            psels = <NRF_PSEL(SPIM_MOSI,1,13)>,
-                    <NRF_PSEL(SPIM_SCK, 1,15)>,
-                    <NRF_PSEL(SPIM_MISO,1,14)>;
-            low-power-enable;
+            pinmux = <SPI0_RX_P0>;  // pin 1, GP0 (not used)
+            input-enable;
         };
     };
 };
 
 &spi0 {
-    compatible = "nordic,nrf-spim";
     status = "okay";
-    clock-frequency = <16000000>;
-    cs-gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
-    pinctrl-0 = <&spi0_default_alt>;
-    pinctrl-1 = <&spi0_sleep_alt>;
-    pinctrl-names = "default", "sleep";
+    clock-frequency = <DT_FREQ_M(8)>;
+    status = "okay";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
 
-    st7789v_nrf52840: st7789v@0 {
+    st7789v_pico_w: st7789v@0 {
         compatible = "sitronix,st7789v";
-        spi-max-frequency = <20000000>;
+        spi-max-frequency = <8000000>;
         reg = <0>;
-        cmd-data-gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
-        reset-gpios    = <&gpio1 10 GPIO_ACTIVE_LOW>;
+        cmd-data-gpios = <&gpio0 5 GPIO_ACTIVE_LOW>; // pin 7, GP5
+        reset-gpios    = <&gpio0 4 GPIO_ACTIVE_LOW>; // pin 6, GP4
         width  = <320>;
         height = <170>;
         x-offset = <0>;
@@ -62,25 +52,25 @@
     };
 };
 
-&gpio1 {
+&gpio0 {
     status = "okay";
 };
 
 / {
 
     chosen {
-        zephyr,display = &st7789v_nrf52840;
+        zephyr,display = &st7789v_pico_w;
     };
 
     backlight {
         compatible = "gpio-leds";
         backlight0: backlight_0 {
-            gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>;
+            gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>; // pin9, GP6
             label = "BACKLIGHT";
         };
     };
 
     aliases {
         backlight = &backlight0;
-    };    
+    };
 };
