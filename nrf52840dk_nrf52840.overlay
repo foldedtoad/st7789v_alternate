@@ -34,7 +34,7 @@
     pinctrl-1 = <&spi0_sleep_alt>;
     pinctrl-names = "default", "sleep";
 
-    st7789v_alt_nrf52840: st7789v@0 {
+    st7789v_nrf52840: st7789v@0 {
         compatible = "sitronix,st7789v";
         spi-max-frequency = <20000000>;
         reg = <0>;
@@ -67,6 +67,11 @@
 };
 
 / {
+
+    chosen {
+        zephyr,display = &st7789v_nrf52840;
+    };
+
     backlight {
         compatible = "gpio-leds";
         backlight0: backlight_0 {
