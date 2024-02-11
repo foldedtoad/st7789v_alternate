@@ -53,7 +53,7 @@ static int set_backlight_on(void)
 {
 #if defined(CONFIG_BACKLIGHT_FIRMWARE)
  
-    #define BACKLIGHT_GPIO_DEV  DT_NODELABEL(gpio0)
+    #define BACKLIGHT_GPIO_DEV  DT_PHANDLE_BY_IDX(DT_ALIAS(backlight), gpios, 0)
     #define BACKLIGHT_PIN       DT_GPIO_PIN(DT_ALIAS(backlight), gpios)
     #define BACKLIGHT_FLAGS     DT_GPIO_FLAGS(DT_ALIAS(backlight), gpios)
 
