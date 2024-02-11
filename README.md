@@ -32,6 +32,9 @@ This project was developed using Zephyr V3.5, and successfully built on both Ubu
 
 **NOTE** -- building may take longer that expected as LVGL has quite a bit of code.
 
+**NOTE** -- The default resolution settings in the ***overlay*** files are set to 320x170.  
+Many displays will have a resolution of 320x240, so update the height and width parameters according to your display panel's resolution.
+
 ### CMake Method
 This build method use cmake directly, and doesn't use west or ninja.  
 Edit the CMakeList.txt file to select the target board.
