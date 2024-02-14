@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2024  Callender Consulting LLC
 
-mainmenu "ST7789V_Alternate options"
+mainmenu "ST7789V_App_options"
 
 menu "Application Options" 
 
@@ -18,7 +18,7 @@ choice
     bool "Manual"
 endchoice
 
-endmenu # BACKLIGHT options
+endmenu # ST7789V_App_options
 
 # include main Zephyr menu entries from Zephyr root directory
 source "Kconfig.zephyr"
