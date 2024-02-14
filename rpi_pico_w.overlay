@@ -15,6 +15,16 @@
             input-enable;
         };
     };
+
+    uart0_default: uart0_default {
+        group1 {
+            pinmux = <UART0_TX_P12>;  // pin 16, GP12
+        };
+        group2 {
+            pinmux = <UART0_RX_P13>;  // pin 17, GP13
+            input-enable;
+        };
+    };
 };
 
 &spi0 {
@@ -50,6 +60,13 @@
         ram-param = [00 F8];
         rgb-param = [CD 08 14];
     };
+};
+
+&uart0 {
+    current-speed = <115200>;
+    status = "okay";
+    pinctrl-0 = <&uart0_default>;
+    pinctrl-names = "default";
 };
 
 &gpio0 {
